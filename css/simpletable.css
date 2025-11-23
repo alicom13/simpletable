@@ -1,0 +1,319 @@
+/*!
+ * SimpleTable v1.0.7
+ * Lightweight, dependency-free table library
+ * https://github.com/alicom13/simpletable
+ */
+
+.simpletable-container {
+    margin-bottom: 20px;
+}
+
+.simpletable-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.simpletable-search {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    display: flex;
+    align-items: stretch;
+}
+
+.simpletable-search input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    height: 42px;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.simpletable-search input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.simpletable-controls-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 42px;
+}
+
+/* Export Button Group */
+.simpletable-export-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background: white;
+}
+
+.simpletable-export-btn {
+    background: #fff;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    height: 42px;
+    width: 42px;
+    transition: all 0.2s;
+    border-right: 1px solid #eee;
+}
+
+.simpletable-export-btn:last-child {
+    border-right: none;
+}
+
+.simpletable-export-btn:hover {
+    background: #f8f9fa;
+}
+
+.simpletable-export-btn.csv:hover {
+    background: #28a745;
+    color: white;
+}
+
+.simpletable-export-btn.excel:hover {
+    background: #217346;
+    color: white;
+}
+
+.simpletable-export-btn.selected:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Perbaikan vertical alignment untuk semua controls */
+.simpletable-perpage {
+    display: flex;
+    align-items: center;
+}
+
+.simpletable-perpage select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    font-family: inherit;
+    height: 42px;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simpletable-perpage select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.simpletable-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.simpletable-pagination button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 40px;
+    font-family: inherit;
+    height: 36px;
+}
+
+.simpletable-pagination button:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #999;
+}
+
+.simpletable-pagination button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.simpletable-pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.simpletable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-family: inherit;
+    background: white;
+}
+
+.simpletable th {
+    background: #f8f9fa;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.simpletable th:hover {
+    background: #e9ecef;
+}
+
+.simpletable th.sort-asc::after {
+    content: " ↑";
+    color: #007bff;
+    font-weight: bold;
+}
+
+.simpletable th.sort-desc::after {
+    content: " ↓";
+    color: #007bff;
+    font-weight: bold;
+}
+
+.simpletable td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.simpletable tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.simpletable input[type="checkbox"] {
+    margin: 0;
+    transform: scale(1.1);
+}
+
+.simpletable-selection {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 12px;
+    background: rgba(0,123,255,0.1);
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.simpletable-export-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+}
+
+.simpletable-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.simpletable-empty {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
+
+.simpletable-info {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.simpletable th:first-child,
+.simpletable td:first-child {
+    width: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Style untuk kolom no-export */
+.simpletable th.no-export,
+.simpletable td.no-export {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .simpletable-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .simpletable-search {
+        max-width: none;
+    }
+    
+    .simpletable-controls-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .simpletable {
+        font-size: 14px;
+    }
+    
+    .simpletable th,
+    .simpletable td {
+        padding: 8px 4px;
+    }
+    
+    .simpletable-perpage {
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .simpletable-controls-right {
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+    }
+    
+    .simpletable-export-group,
+    .simpletable-perpage select {
+        width: 100%;
+    }
+    
+    .simpletable-selection {
+        justify-content: center;
+    }
+}
