@@ -254,19 +254,23 @@ class SimpleTable {
         const prevDisabled = this.page === 1;
         const nextDisabled = this.page >= totalPages;
 
-        let paginationHTML = '<button ' + (prevDisabled ? 'disabled' : '') + '>‹ Prev</button>';
+        let paginationHTML =
+            '<button class="pagination-prev" ' + (prevDisabled ? 'disabled' : '') + '>‹</button>';
 
         const pages = this.getVisiblePages(totalPages);
         pages.forEach(pageNum => {
             if (pageNum === '...') {
-                paginationHTML += '<button disabled>...</button>';
+                paginationHTML += '<button class="pagination-ellipsis" disabled>...</button>';
             } else {
                 const activeClass = pageNum === this.page ? 'active' : '';
-                paginationHTML += '<button class="' + activeClass + '">' + pageNum + '</button>';
+                paginationHTML +=
+                    '<button class="pagination-number ' + activeClass + '">' + pageNum + '</button>';
             }
         });
 
-        paginationHTML += '<button ' + (nextDisabled ? 'disabled' : '') + '>Next ›</button>';
+        paginationHTML +=
+            '<button class="pagination-next" ' + (nextDisabled ? 'disabled' : '') + '>›</button>';
+
         pag.innerHTML = paginationHTML;
 
         pag.querySelector('button:first-child').addEventListener('click', () => {
