@@ -1,0 +1,25 @@
+/*!
+ * SimpleTable v1.0.8 - Complete Table Library
+ * Description: SimpleTable adalah library JavaScript yang mengubah tabel HTML biasa 
+ * menjadi table cerdas lengkap dengan satu class saja. Tambahkan class='simpletable', 
+ * dan langsung dapatkan pagination, sorting, real-time search, row selection, dan export 
+ * - semua otomatis, tanpa konfigurasi, dan siap pakai di semua device!
+ * 
+ * Features:
+ * ✅ Plug & Play - Just add class="simpletable"
+ * ✅ Pagination with smart page display
+ * ✅ Multi-column sorting (text & numbers)
+ * ✅ Real-time search with debouncing
+ * ✅ Row selection & bulk actions
+ * ✅ Export to CSV, Excel, and Selected Rows
+ * ✅ Fully responsive design
+ * ✅ Zero dependencies, vanilla JS
+ * ✅ Customizable styling
+ * ✅ Accessible with ARIA attributes
+ * 
+ * @copyright  2025 
+ * @author    Ali Musthofa
+ * @link      https://github.com/alicom13/simpletable
+ * @license   MIT
+ */
+.simpletable-container{margin-bottom:1rem}.simpletable-controls{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem}.simpletable-search{flex:1;min-width:200px}.simpletable-search input{width:100%;padding:.375rem .75rem;border:1px solid #ccc;border-radius:4px;font-family:inherit}.simpletable-controls-right{display:flex;align-items:center;gap:.75rem}.simpletable-export-group{display:flex;align-items:center;gap:0;border:1px solid #ccc;border-radius:4px;overflow:hidden;background:#fff}.simpletable-export-btn{background:#fff;border:none;padding:0;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;height:2rem;width:2rem;transition:background-color .2s;border-right:1px solid #eee}.simpletable-export-btn:last-child{border-right:none}.simpletable-export-btn:hover{background:#f0f0f0}.simpletable-pagination-controls{display:flex;align-items:center;gap:.75rem}.simpletable-selection{white-space:nowrap}.simpletable-perpage select{padding:.25rem .5rem;border:1px solid #ccc;border-radius:4px;background:#fff;cursor:pointer;font-family:inherit}.simpletable-pagination{display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:1rem;flex-wrap:wrap}.simpletable-pagination button{padding:.375rem .75rem;border:1px solid #ccc;background:#fff;border-radius:4px;cursor:pointer;font-family:inherit}.simpletable-pagination button.active{background:#007bff;color:#fff;border-color:#007bff}.simpletable-pagination button:disabled{opacity:.5;cursor:not-allowed}.simpletable th{cursor:pointer;user-select:none;position:relative}.simpletable th.sort-asc::after{content:" ↑";font-weight:700;margin-left:.25rem}.simpletable th.sort-desc::after{content:" ↓";font-weight:700;margin-left:.25rem}.simpletable-loading,.simpletable-empty{text-align:center;padding:2rem}.simpletable-info{margin-top:.5rem;text-align:center}@media (max-width:768px){.simpletable-controls{flex-direction:column;align-items:stretch}.simpletable-search{min-width:100%}.simpletable-controls-right{width:100%;justify-content:space-between}.simpletable-pagination-controls{order:-1;width:100%;justify-content:space-between;margin-bottom:.5rem}}@media (max-width:480px){.simpletable-controls-right{flex-direction:column;gap:.5rem}.simpletable-pagination-controls{flex-direction:row;justify-content:space-between}.simpletable-export-group{width:100%;justify-content:center}}
